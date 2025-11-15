@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UHV-2 Unit-02 - Questions</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f9f9f9;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.55;
+        }
+
+        header {
+            background-color: #0077cc;
+            color: white;
+            padding: 0.9rem 0.5rem;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 1.8rem auto;
+            padding: 1.1rem;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.06);
+            page-break-after: always;
+            border-radius: 6px;
+        }
+
+        h2 {
+            color: #0077cc;
+            margin: 0 0 0.9rem;
+            font-size: 1.55rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: #444;
+            margin: 1.1rem 0 0.55rem;
+            font-size: 1.28rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0.55rem 0;
+        }
+
+        ul, ol {
+            margin: 0.55rem 0;
+            padding-left: 1.3rem;
+        }
+
+        li {
+            margin-bottom: 0.35rem;
+        }
+
+        li > ul, li > ol {
+            margin: 0.35rem 0;
+            padding-left: 1.2rem;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 11px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 0.88rem;
+            line-height: 1.4;
+            margin: 0.7rem 0;
+            border: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                font-size: 1.25rem;
+                padding: 0.75rem 0.5rem;
+            }
+
+            .container {
+                margin: 1.2rem auto;
+                padding: 0.95rem;
+                border-radius: 5px;
+            }
+
+            h2 {
+                font-size: 1.35rem;
+                margin-bottom: 0.8rem;
+            }
+
+            h3 {
+                font-size: 1.15rem;
+                margin: 0.95rem 0 0.45rem;
+            }
+
+            ul, ol {
+                padding-left: 1rem;
+            }
+
+            li > ul, li > ol {
+                padding-left: 1rem;
+            }
+
+            pre {
+                font-size: 0.82rem;
+                padding: 9px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 1rem auto;
+                padding: 0.85rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            ul, ol {
+                padding-left: 0.9rem;
+            }
+
+            li > ul, li > ol {
+                padding-left: 0.9rem;
+            }
+        }
+
+        @media print {
+            .container {
+                page-break-after: always;
+                box-shadow: none;
+                margin: 0;
+                padding: 1rem;
+                border-radius: 0;
+            }
+
+            header {
+                background: #0077cc !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+        }
+
+        ol.roman {
+            counter-reset: item;
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0.55rem 0;
+        }
+
+        ol.roman > li {
+            counter-increment: item;
+            position: relative;
+            padding-left: 1.6rem;
+            margin-bottom: 0.35rem;
+        }
+
+        ol.roman > li::before {
+            content: counter(item, lower-roman) ") ";
+            position: absolute;
+            left: 0;
+            color: #0077cc;
+            font-weight: bold;
+            width: 1.4rem;
+            text-align: left;
+            font-size: 0.94em;
+            top: 0;
+        }
+
+        ol.roman ol {
+            counter-reset: subitem;
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0.3rem;
+        }
+
+        ol.roman ol > li {
+            counter-increment: subitem;
+            position: relative;
+            padding-left: 1.7rem;
+            margin-bottom: 0.25rem;
+        }
+
+        ol.roman ol > li::before {
+            content: "(" counter(subitem, lower-alpha) ") ";
+            position: absolute;
+            left: 0;
+            color: #0077cc;
+            font-weight: bold;
+            width: 1.5rem;
+            font-size: 0.92em;
+        }
+
+        ol.roman li > ul {
+            margin: 0.35rem 0 0.5rem 1.4rem;
+            padding-left: 0;
+        }
+
+        @media (max-width: 768px) {
+            ol.roman > li {
+                padding-left: 1.5rem;
+            }
+
+            ol.roman > li::before {
+                width: 1.3rem;
+            }
+
+            ol.roman ol > li {
+                padding-left: 1.6rem;
+            }
+
+            ol.roman ol > li::before {
+                width: 1.4rem;
+            }
+
+            ol.roman li > ul {
+                margin-left: 1rem;
+            }
+        }
+
+        .indent-block {
+            margin-left: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .indent-block {
+                margin-left: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .indent-block {
+                margin-left: 0.8rem;
+            }
+        }
+
+        img {
+            display: block;
+            max-width: 58%;
+            height: auto;
+            max-height: 270px;
+            object-fit: contain;
+            margin: 1rem auto;
+            border-radius: 6px;
+            cursor: zoom-in;
+            transition: transform 0.2s ease;
+            border: 1px solid #ddd;
+        }
+
+        img:hover {
+            transform: scale(1.04);
+        }
+
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(6px);
+        }
+
+        #lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #lightbox img {
+            max-width: 88%;
+            max-height: 88%;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.3);
+            transform: scale(0.85);
+            transition: transform 0.3s ease;
+            cursor: zoom-out;
+        }
+
+        #lightbox.active img {
+            transform: scale(1);
+        }
+
+        #image-tip {
+            position: fixed;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 119, 204, 0.96);
+            color: #fff;
+            padding: 0.7rem 1.1rem;
+            border-radius: 6px;
+            font-size: 0.92rem;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease;
+            white-space: nowrap;
+        }
+
+        #image-tip.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (max-width: 480px) {
+            #image-tip {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        UHV-2 Unit-02
+    </header>
+
+    <div class="container">
+        <h2>1. Human being as co-existence of sentient ‘I’ and material ‘Body’</h2>
+        <h3>Discuss the being as a co-existence of the sentient “I” and the material “Body”.</h3>
+        <ul>
+            <li>Co-existence Concept: Human is combination of conscious self and physical body.</li>
+            <li>Self Awareness: Sentient 'I' is alive entity experiencing feelings and thoughts.</li>
+            <li>Body Role: Material body acts as instrument for 'I' to interact.</li>
+            <li>Exchange Info: Continuous information flow between 'I' and body.</li>
+            <li>Harmony Need: Understanding co-existence leads to inner balance.</li>
+        </ul>
+        <h3>Examine the Harmony in human being as a co-existence?</h3>
+        <ul>
+            <li>Inner Balance: Harmony when 'I' and body align in needs and activities.</li>
+            <li>Needs Differentiation: 'I' seeks happiness, body needs facilities.</li>
+            <li>Continuous Activities: 'I' always active in imaging and analyzing.</li>
+            <li>Fulfillment Method: Right understanding ensures harmony.</li>
+            <li>Co-existence Goal: Leads to continuous happiness and prosperity.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-02
+    </header>
+
+    <div class="container">
+        <h2>2. Needs of Self (‘I’) and Body — happiness and physical facility</h2>
+        <h3>Explain the needs of Self “I” and “Body” with examples.</h3>
+        <ul>
+            <li>Self Needs: 'I' requires happiness through trust and respect.</li>
+            <li>Body Needs: Body needs food and clothing for protection.</li>
+            <li>Continuous Nature: Self needs are ongoing like acceptance.</li>
+            <li>Temporary Aspect: Body needs are limited like eating.</li>
+            <li>Qualitative Difference: Self needs qualitative, body quantitative.</li>
+        </ul>
+        <h3>Explain the meaning of prosperity and discuss the role of prosperity?</h3>
+        <ul>
+            <li>Prosperity Definition: Feeling of having more than required facilities.</li>
+            <li>Role in Life: Ensures fulfillment of body needs for harmony.</li>
+            <li>Avoid Accumulation: Differentiate from hoarding excess goods.</li>
+            <li>Right Appraisal: Correctly assess physical requirements.</li>
+            <li>Continuous Happiness: Contributes to overall well-being.</li>
+        </ul>
+        <h3>What are the methods to fulfil human aspirations?</h3>
+        <ul>
+            <li>Right Understanding: Gain knowledge of self and reality.</li>
+            <li>Harmonious Relationships: Build trust and respect with others.</li>
+            <li>Physical Facilities: Ensure adequate material needs.</li>
+            <li>Self-Exploration: Use natural acceptance for validation.</li>
+            <li>Living in Harmony: Practice at all existence levels.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-02
+    </header>
+
+    <div class="container">
+        <h2>3. Body as an instrument of ‘I’ (I = doer, seer, enjoyer)</h2>
+        <h3>Describe the body as an instrument of “I”.</h3>
+        <ul>
+            <li>Instrument Role: Body executes actions decided by 'I'.</li>
+            <li>Doer Function: 'I' chooses and body performs tasks.</li>
+            <li>Seer Aspect: 'I' observes through body's senses.</li>
+            <li>Enjoyer Part: 'I' experiences pleasure via body.</li>
+            <li>Decision Maker: 'I' controls body's movements.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-02
+    </header>
+
+    <div class="container">
+        <h2>4. Characteristics and activities of ‘I’; harmony in ‘I’</h2>
+        <h3>What are the characteristics and activities of “I” and harmony in “I”.</h3>
+        <ul>
+            <li>Conscious Entity: 'I' is sentient and aware.</li>
+            <li>Imaging Activity: Continuously forms desires and thoughts.</li>
+            <li>Analyzing Process: Evaluates options and surroundings.</li>
+            <li>Selecting Task: Chooses based on expectations.</li>
+            <li>Harmony State: Alignment leads to inner peace.</li>
+        </ul>
+        <h3>Define "I" and explain its characteristics.</h3>
+        <ul>
+            <li>Self Definition: 'I' is conscious alive-ness in human.</li>
+            <li>Sentient Nature: Feels happiness and sadness.</li>
+            <li>Continuous Activities: Always imaging and analyzing.</li>
+            <li>Decision Power: Controls body as doer.</li>
+            <li>Harmony Need: Requires right understanding.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-02
+    </header>
+
+    <div class="container">
+        <h2>5. Harmony of I with the Body — Sanyam and Health; correct appraisal of physical needs; meaning of prosperity in detail</h2>
+        <h3>Describe the Sanyam and Health Program Role.</h3>
+        <ul>
+            <li>Sanyam Control: Restraint over senses and mind.</li>
+            <li>Health Maintenance: Ensures body well-being through programs.</li>
+            <li>Appraisal Needs: Correctly evaluate physical requirements.</li>
+            <li>Prosperity Meaning: Feeling of sufficient facilities.</li>
+            <li>Harmony Achievement: Aligns 'I' with body.</li>
+        </ul>
+        <h3>What is stress and how to handle the stress!?</h3>
+        <ul>
+            <li>Stress Definition: Tension from unmet expectations.</li>
+            <li>Identify Causes: Recognize sources like pressure.</li>
+            <li>Relaxation Techniques: Use breathing and exercise.</li>
+            <li>Right Understanding: Gain harmony through knowledge.</li>
+            <li>Seek Support: Talk to others for relief.</li>
+        </ul>
+        <h3>Write about Social and Preventive Medicine.</h3>
+        <ul>
+            <li>Social Focus: Addresses community health issues.</li>
+            <li>Preventive Approach: Avoids diseases through measures.</li>
+            <li>Hygiene Promotion: Encourages clean habits.</li>
+            <li>Vaccination Programs: Protects against illnesses.</li>
+            <li>Education Role: Teaches healthy living.</li>
+        </ul>
+        <h3>What do you mean by personal hygiene and handling stress?</h3>
+        <ul>
+            <li>Hygiene Definition: Practices for cleanliness.</li>
+            <li>Daily Routines: Bathing and brushing teeth.</li>
+            <li>Stress Handling: Manage through relaxation.</li>
+            <li>Healthy Habits: Exercise and balanced diet.</li>
+            <li>Prevent Illness: Avoids diseases and tension.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-02
+    </header>
+
+    <div class="container">
+        <h2>6. Programs to ensure Sanyam and Health; ensuring health vs dealing with disease</h2>
+        <ul>
+            <li>Daily Exercise: Maintain body through regular activity.</li>
+            <li>Balanced Diet: Eat nutritious food for health.</li>
+            <li>Mind Control: Practice sanyam for restraint.</li>
+            <li>Preventive Care: Focus on avoiding illness.</li>
+            <li>Holistic Approach: Combine physical and mental programs.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-02
+    </header>
+
+    <div class="container">
+        <h2>7. Role of others in making material goods available; differentiate prosperity vs accumulation</h2>
+        <h3>Include practice sessions to discuss the role others have played in making material goods available to me. Identifying from one’s own life. Differentiate between prosperity and accumulation.</h3>
+        <ul>
+            <li>Others Role: People provide goods through efforts.</li>
+            <li>Personal Reflection: Identify contributions in life.</li>
+            <li>Prosperity Meaning: Feeling of sufficient needs.</li>
+            <li>Accumulation Difference: Hoarding excess without need.</li>
+            <li>Practice Discussion: Share examples in sessions.</li>
+        </ul>
+    </div>
+
+    <header>
+        UHV-2 Unit-02
+    </header>
+
+    <div class="container">
+        <h2>8. Habits, Hobbies, SWOT, Personality tests — (cross-cutting, self-exploration & behaviour)</h2>
+        <h3>Discuss about the Dr. Menninger’s Psychometric Test.</h3>
+        <ul>
+            <li>Test Purpose: Assesses mental health levels.</li>
+            <li>Scoring System: Rates behaviors from normal to abnormal.</li>
+            <li>Application Areas: Used in psychology evaluations.</li>
+            <li>Interpretation Guide: Helps understand emotional states.</li>
+            <li>Self-Improvement: Aids in personal development.</li>
+        </ul>
+        <h3>What do you mean by SWOT analysis? Explain SWOT analysis of habits and hobbies.</h3>
+        <ul>
+            <li>SWOT Definition: Assess strengths, weaknesses, opportunities, threats.</li>
+            <li>Habits Strengths: Positive routines like exercise.</li>
+            <li>Weaknesses Identification: Bad habits like procrastination.</li>
+            <li>Opportunities Use: Turn hobbies into skills.</li>
+            <li>Threats Avoidance: External influences on habits.</li>
+        </ul>
+        <h3>How the Habits and Hobbies influence human being.</h3>
+        <ul>
+            <li>Behavior Shaping: Habits form daily routines.</li>
+            <li>Personality Development: Hobbies build interests.</li>
+            <li>Health Impact: Positive ones improve well-being.</li>
+            <li>Relationship Effect: Influence social interactions.</li>
+            <li>Growth Role: Lead to personal fulfillment.</li>
+        </ul>
+        <h3>Explain the Tibetan Personality Test with examples.</h3>
+        <ul>
+            <li>Test Overview: Reveals traits through choices.</li>
+            <li>Animal Ranking: Shows priorities like family.</li>
+            <li>Color Selection: Indicates emotional states.</li>
+            <li>Example Interpretation: Dog first means loyalty.</li>
+            <li>Self-Awareness: Helps understand subconscious.</li>
+        </ul>
+    </div>
+
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        document.querySelectorAll("img").forEach(img => {
+            img.addEventListener("click", () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add("active");
+            });
+        });
+
+        lightbox.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+        });
+
+        window.addEventListener("DOMContentLoaded", () => {
+            const tip = document.getElementById("image-tip");
+            tip.classList.add("show");
+            setTimeout(() => tip.classList.remove("show"), 5000);
+        });
+    </script>
+
+</body>
+
+</html>
